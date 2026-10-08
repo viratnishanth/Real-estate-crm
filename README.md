@@ -1,78 +1,36 @@
-# Real Estate CRM
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A modern, full-stack CRM built specifically for real estate agencies to manage leads, properties, follow-ups, and sales team assignments securely.
+## Getting Started
 
-## 🚀 Tech Stack
-- **Frontend:** Next.js (React), CSS Modules (Custom UI), JSX
-- **Backend:** Node.js, Express.js
-- **Database:** PostgreSQL (Hosted on Neon DB)
-- **Authentication:** JWT (JSON Web Tokens) & Bcrypt
+First, run the development server:
 
-## ⚙️ Setup Instructions (Local Development)
-
-### 1. Clone the repository
-```bash
-git clone <your-github-repo-url>
-cd Real-estate-crm
-```
-
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-```
-**Environment Variables:** Create a `.env` file in the `backend` folder:
-```env
-PORT=5000
-DATABASE_URL=postgresql://<username>:<password>@<neon-db-url>/crm?sslmode=require
-JWT_SECRET=supersecretkey
-```
-Start the backend server:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### 3. Frontend Setup
-```bash
-cd ../frontend
-npm install
-```
-Start the frontend server:
-```bash
-npm run dev
-```
-Open `http://localhost:3000` in your browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## 🗄️ Database Schema & API Overview
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Database Tables (PostgreSQL)
-1. **Users:** Stores Admin and Sales employee credentials (Passwords are hashed).
-2. **Leads:** Stores customer inquiries (Name, Phone, Email, Stage, Property Type, Budget, Follow-up Date, Assigned To).
-3. **Properties:** Inventory of properties/projects available for sale.
-4. **Bookings:** Tracks properties that have been successfully sold/booked.
+## Learn More
 
-### Key API Endpoints
-**Auth (Authentication)**
-- `POST /api/auth/login`: Authenticates user and returns JWT token.
+To learn more about Next.js, take a look at the following resources:
 
-**Leads (Lead Management)**
-- `GET /api/leads`: Fetch all leads (Admin sees all, Sales sees only assigned leads).
-- `POST /api/leads`: Add a new lead.
-- `PUT /api/leads/:id`: Edit a lead.
-- `DELETE /api/leads/:id`: Delete a lead.
-- `POST /api/leads/bulk-delete`: Bulk delete leads (Admin only).
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-**Properties & Employees**
-- `GET /api/properties`: Fetch available inventory.
-- `GET /api/employees`: Fetch list of sales representatives (Admin only).
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## 🌐 Deployment
-- **Frontend URL:** `[Your Vercel/Netlify URL here]`
-- **Backend URL:** `[Your Render/Railway URL here]`
-- **Database:** Hosted on Neon Cloud (PostgreSQL).
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-*Note: For production deployment, ensure the frontend API calls point to the Live Backend URL instead of localhost.*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
